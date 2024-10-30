@@ -1,5 +1,5 @@
 // first step add eventlistener
-document.getElementById('btn-add-money').addEventListener('click',function(event){
+document.getElementById('btn-add-money').addEventListener('click', function (event) {
     event.preventDefault();
     // get money to be added to the account
     const addMoneyInput = document.getElementById('input-add-money').value;
@@ -8,7 +8,7 @@ document.getElementById('btn-add-money').addEventListener('click',function(event
     const addPinInput = document.getElementById('input-pin-number').value;
     console.log(addPinInput);
     // verified pin
-    if(addPinInput ==='1234'){
+    if (addPinInput === '1234') {
         console.log('adding money to your account');
         // get the current balance
         const balance = document.getElementById('account-balance').innerText;
@@ -18,8 +18,10 @@ document.getElementById('btn-add-money').addEventListener('click',function(event
         const balanceNumber = parseFloat(balance);
         const newBalance = addMoneyNmber + balanceNumber;
         console.log(newBalance);
+        // set newbalance 
+        document.getElementById('account-balance').innerText = newBalance;
     }
-    else{
+    else {
         alert('failed to add money!please try again');
     }
 
